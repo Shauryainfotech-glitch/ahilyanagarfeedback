@@ -40,7 +40,7 @@ const translations = {
     descriptionRequired: "Please enter your feedback.",
  slogans: [
   "We believe that <br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"There is always scope for improvement\"</b></span>",
-  "We are committed to serve the people <br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'>\"Do you want to say something?\"</b></span>"
+  "We are committed to serve the people <br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"Do you want to say something?\"</b></span>"
 ],
     tableHeaders: {
       department: "Department",
