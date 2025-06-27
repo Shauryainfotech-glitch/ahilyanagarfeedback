@@ -38,10 +38,10 @@ const translations = {
     fileSizeError: "File size must be less than 10MB",
     fileTypeError: "Please select only image files (JPG, PNG, GIF, etc.)",
     descriptionRequired: "Please enter your feedback.",
-    slogans: [
-      "We believe that  <span style='font-size: 1.2em; display: block;'><b>\"There is always scope for improvement\"</b>",
-      "We are committed to serve the people<span style='font-size: 1.2em; display: block;'> <b>\"Do you want to say something?\"</b>",
-    ],
+ slogans: [
+  "We believe that <br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"There is always scope for improvement\"</b></span>",
+  "We are committed to serve the people <br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'>\"Do you want to say something?\"</b></span>"
+],
     tableHeaders: {
       department: "Department",
       rating: "Rating",
@@ -81,11 +81,11 @@ const translations = {
     fileSizeError: "फाईलचा आकार १०MB पेक्षा कमी असणे आवश्यक आहे",
     fileTypeError: "कृपया फक्त छायाचित्र फाईल्स निवडा (JPG, PNG, GIF, इ.)",
     descriptionRequired: "कृपया अभिप्राय नोंदवा.",
-    slogans: [
-      "आम्हाला जाणीव आहे  <b><span style='font-size: 1em; display: block;'>\"सुधारणा ही निरंतर प्रक्रिया आहे.\"</span></b>",
-      "जनतेला सेवा देण्यासाठी आम्ही कटिबद्ध आहोत<b><span style='font-size: 1em; display: block;'>\"तुम्हाला काही सूचवायचं आहे का ?\"</span></b>",
-    ],
-    tableHeaders: {
+     slogans :[
+      "आम्हाला जाणीव आहे<br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"सुधारणा ही निरंतर प्रक्रिया आहे.\"</span>",
+  "जनतेला सेवा देण्यासाठी आम्ही कटिबद्ध आहोत<br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"तुम्हाला काही सूचवायचं आहे का ?\"</span>"
+],
+tableHeaders: {
       department: "विभाग",
       rating: "रेटिंग",
       value: "मूल्यांकन",
@@ -371,7 +371,8 @@ const FeedbackForm = () => {
   return (
     <div className="container-fluid px-0">
       {/* Enhanced Header with Gradient and Subtle Animation */}
-      <header
+
+<header
   className="sticky-top"
   style={{
     background: "linear-gradient(135deg, #0A2362 0%, #1a4a9a 100%)",
@@ -383,7 +384,7 @@ const FeedbackForm = () => {
   <div className="container">
     <div className="d-flex flex-wrap justify-content-between align-items-center py-2 py-md-3">
       {/* Logo - Left aligned */}
-      <div className="d-flex align-items-center order-1 order-md-1">
+      <div className="d-flex align-items-center order-1 order-md-1" style={{ flex: '0 0 auto' }}>
         <div
           className="logo-container"
           style={{
@@ -405,7 +406,7 @@ const FeedbackForm = () => {
           }}
         >
           <img
-            src="/maha-logo.png"
+            src="/favicon.ico"
             alt="Maharashtra Government Logo"
             style={{
               height: windowWidth < 768 ? "40px" : "80px",
@@ -418,9 +419,9 @@ const FeedbackForm = () => {
       </div>
 
       {/* Language Selector - Right aligned (top on mobile) */}
-      <div className="order-3 order-md-3 mt-0 ms-auto ms-md-0">
-        <div className="position-relative" style={{ 
-          minWidth: windowWidth < 768 ? "90px" : "120px"
+      <div className="order-3 order-md-3 mt-0 ms-auto ms-md-0" style={{ flex: '0 0 auto' }}>
+        <div className="position-relative" style={{
+          minWidth: windowWidth < 768 ? "100px" : "120px" // Increased for mobile
         }}>
           <select
             className="form-select ps-3 pe-4 py-1"
@@ -440,13 +441,14 @@ const FeedbackForm = () => {
               backgroundImage: `url(${language === "mr" ? "/india-flag.png" : "/uk-flag.png"}), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230A2362' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E")`,
               backgroundRepeat: "no-repeat, no-repeat",
               backgroundPosition: `
-                ${windowWidth < 768 ? "5px" : "8px"} center,
-                calc(100% - ${windowWidth < 768 ? "8px" : "15px"}) center
+                ${windowWidth < 768 ? "8px" : "10px"} center, // Adjusted for mobile
+                calc(100% - ${windowWidth < 768 ? "10px" : "15px"}) center
               `,
               backgroundSize: "16px, 16px",
-              paddingRight: windowWidth < 768 ? "25px" : "35px",
-              paddingLeft: windowWidth < 768 ? "25px" : "35px",
-              width: windowWidth < 768 ? "auto" : "100%"
+              paddingRight: windowWidth < 768 ? "30px" : "35px", // Adjusted for mobile
+              paddingLeft: windowWidth < 768 ? "30px" : "35px", // Adjusted for mobile
+              width: "100%", // Full width for consistency
+              fontSize: windowWidth < 768 ? "14px" : "16px" // Responsive font size
             }}
           >
             <option value="mr">मराठी</option>
@@ -456,26 +458,42 @@ const FeedbackForm = () => {
       </div>
 
       {/* Centered Title - Middle */}
-      <div className="order-2 order-md-2 text-center mx-2 mx-md-4 flex-grow-1 flex-md-grow-0">
+      <div className="order-2 order-md-2 text-center mx-2 mx-md-4" style={{
+        flex: '1 1 auto',
+        minWidth: 0, // Prevent overflow
+        overflow: 'hidden', // Ensure text doesn't overflow
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        padding: windowWidth < 768 ? '5px 0' : '10px 0' // Responsive padding
+      }}>
         <h2
           className="fw-bold mb-0 text-white"
           style={{
-            fontSize: windowWidth < 768 ? "1.2rem" : 
-                    windowWidth < 992 ? "1.5rem" : "1.8rem",
+            fontSize: windowWidth < 768 ? "1.1rem" : // Smaller on mobile
+              windowWidth < 992 ? "1.4rem" : "1.7rem", // Adjusted breakpoints
             letterSpacing: "0.5px",
             position: "relative",
             display: "inline-block",
-            textShadow: "1px 1px 3px rgba(0,0,0,0.3)"
+            textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
+            maxWidth: '100%',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            lineHeight: '1.2',
+            margin: 0,
+            padding: '0 5px'
           }}
         >
           {language === "mr" ? "अहिल्यानगर पोलीस" : "AHILYANAGAR POLICE"}
           <span
             style={{
               position: "absolute",
-              bottom: "-5px",
+              bottom: "-3px",
               left: 0,
               width: "100%",
-              height: "3px",
+              height: "2px",
               background: "linear-gradient(to right, #FFD700, #FFFFFF)",
               borderRadius: "3px",
               transform: "scaleX(0)",
@@ -501,48 +519,48 @@ const FeedbackForm = () => {
         <div className="container">
           {/* Animated Slogans Carousel */}
           <div className="mb-2 mb-md-3">  {/* Reduced bottom margin */}
-  <div className="slogan-carousel">
-    {t.slogans &&
-      t.slogans.map((s, idx) => (
+<div className="slogan-carousel" style={{ maxWidth: "1200px", margin: "0 auto" }}>
+  {t.slogans &&
+    t.slogans.map((s, idx) => (
+      <div
+        key={idx}
+        className="slogan-item"
+        style={{
+          animationDelay: `${idx * 0.2}s`,
+          background: "rgba(255,255,255,0.9)",
+          borderRadius: "6px",
+          boxShadow: "0 2px 8px rgba(10, 35, 98, 0.1)",
+          borderLeft: "3px solid #0A2362",
+          transition: "all 0.3s ease",
+          margin: "0 auto 16px",
+          padding: "clamp(12px, 2vw, 20px)",
+          width: "clamp(300px, 90vw, 800px)",
+          boxSizing: "border-box"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-2px)";
+          e.currentTarget.style.boxShadow = "0 4px 12px rgba(10, 35, 98, 0.15)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "";
+          e.currentTarget.style.boxShadow = "0 2px 8px rgba(10, 35, 98, 0.1)";
+        }}
+      >
         <div
-          key={idx}
-          className="slogan-item text-center p-1 p-md-2 mb-1 mb-md-2 animate__animated animate__fadeIn" 
+          className="slogan-text"
           style={{
-            animationDelay: `${idx * 0.2}s`,
-            background: "rgba(255,255,255,0.9)",
-            borderRadius: "6px",  
-            boxShadow: "0 2px 8px rgba(10, 35, 98, 0.1)", 
-            borderLeft: "3px solid #0A2362", 
-            transition: "all 0.3s ease",
-          
+            color: "#0A2362",
+            fontSize: "clamp(14px, 1.8vw, 18px)",
+            lineHeight: "1.5",
+            textAlign: "left",
+            whiteSpace: "pre-wrap",
+            overflowWrap: "break-word"
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-2px)";  
-            e.currentTarget.style.boxShadow =
-              "0 4px 12px rgba(10, 35, 98, 0.15)"; 
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "";
-            e.currentTarget.style.boxShadow =
-              "0 2px 8px rgba(10, 35, 98, 0.1)";
-          }}
-        >
-          <div
-            className="slogan-text fw-medium"
-            style={{
-              color: "#0A2362",
-              fontSize:
-                windowWidth < 768
-                  ? "0.8rem"  
-                  : windowWidth < 992
-                  ? "0.9rem"
-                  : "1.3rem",
-            }}
-            dangerouslySetInnerHTML={{ __html: s }}
-          />
-        </div>
-      ))}
-  </div>
+          dangerouslySetInnerHTML={{ __html: s }}
+        />
+      </div>
+    ))}
+</div>
 </div>
 
           {/* Form Section with Floating Label Effect */}
