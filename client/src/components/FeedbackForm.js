@@ -38,10 +38,10 @@ const translations = {
     fileSizeError: "File size must be less than 10MB",
     fileTypeError: "Please select only image files (JPG, PNG, GIF, etc.)",
     descriptionRequired: "Please enter your feedback.",
- slogans: [
-  "We believe that <br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"There is always scope for improvement\"</b></span>",
-  "We are committed to serve the people <br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"Do you want to say something?\"</b></span>"
-],
+    slogans: [
+      "We believe that <br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"There is always scope for improvement\"</b></span>",
+      "We are committed to serve the people <br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1em'><b>\"Do you want to say something?\"</b></span>"
+    ],
     tableHeaders: {
       department: "Department",
       rating: "Rating",
@@ -64,7 +64,7 @@ const translations = {
     selectDepartment: "विभाग",
     add: "जोडा",
     remove: "काढा",
-    success: "अभिप्राय यशस्वीरित्या पाठवला गेला.",
+    success: "अभिप्राय यशस्वीरित्या पाठवला गेला",
     error:
       "तुमचा अभिप्राय पाठवण्यात काही अडचण आली आहे. कृपया नंतर पुन्हा प्रयत्न करा.",
     descriptionNote: "आपली अभिप्राय व्यक्त करा (कमाल ५० शब्दांची मर्यादा )",
@@ -81,11 +81,11 @@ const translations = {
     fileSizeError: "फाईलचा आकार १०MB पेक्षा कमी असणे आवश्यक आहे",
     fileTypeError: "कृपया फक्त छायाचित्र फाईल्स निवडा (JPG, PNG, GIF, इ.)",
     descriptionRequired: "कृपया अभिप्राय नोंदवा.",
-     slogans :[
+    slogans: [
       "आम्हाला जाणीव आहे<br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"सुधारणा ही निरंतर प्रक्रिया आहे.\"</span>",
-  "जनतेला सेवा देण्यासाठी आम्ही कटिबद्ध आहोत<br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"तुम्हाला काही सूचवायचं आहे का ?\"</span>"
-],
-tableHeaders: {
+      "जनतेला सेवा देण्यासाठी आम्ही कटिबद्ध आहोत<br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"तुम्हाला काही सूचवायचं आहे का ?\"</span>"
+    ],
+    tableHeaders: {
       department: "विभाग",
       rating: "रेटिंग",
       value: "मूल्यांकन",
@@ -372,140 +372,148 @@ const FeedbackForm = () => {
     <div className="container-fluid px-0">
       {/* Enhanced Header with Gradient and Subtle Animation */}
 
-<header
-  className="sticky-top"
-  style={{
-    background: "linear-gradient(135deg, #0A2362 0%, #1a4a9a 100%)",
-    boxShadow: "0 4px 20px rgba(10, 35, 98, 0.3)",
-    borderBottom: "3px solid #FFD700",
-    zIndex: 1000,
-  }}
->
-  <div className="container">
-    <div className="d-flex flex-wrap justify-content-between align-items-center py-2 py-md-3">
-      {/* Logo - Left aligned */}
-      <div className="d-flex align-items-center order-1 order-md-1" style={{ flex: '0 0 auto' }}>
-        <div
-          className="logo-container"
-          style={{
-            padding: "6px",
-            borderRadius: "6px",
-            transition: "all 0.3s ease",
-            background: "rgba(255,255,255,0.9)",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
-            transformStyle: "preserve-3d",
-            perspective: "1000px"
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-3px) rotateY(10deg)";
-            e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.2)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "";
-            e.currentTarget.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
-          }}
-        >
-          <img
-            src="/favicon.ico"
-            alt="Maharashtra Government Logo"
-            style={{
-              height: windowWidth < 768 ? "40px" : "80px",
-              width: "auto",
-              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
-              transition: "transform 0.3s ease"
-            }}
-          />
-        </div>
-      </div>
+      <header
+        className="sticky-top"
+        style={{
+          background: "linear-gradient(135deg, #0A2362 0%, #1a4a9a 100%)",
+          boxShadow: "0 4px 20px rgba(10, 35, 98, 0.3)",
+          borderBottom: "3px solid #FFD700",
+          zIndex: 1000,
+        }}
+      >
+        <div className="container">
+          <div className="d-flex flex-wrap justify-content-between align-items-center py-2 py-md-3">
+            {/* Logo - Left aligned */}
+            <div className="d-flex align-items-center order-1 order-md-1" style={{ flex: '0 0 auto' }}>
+              <div
+                className="logo-container"
+                style={{
+                  padding: "6px",
+                  borderRadius: "6px",
+                  transition: "all 0.3s ease",
+                  background: "rgba(255,255,255,0.9)",
+                  boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-3px) rotateY(10deg)";
+                  e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "";
+                  e.currentTarget.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
+                }}
+              >
+                <img
+                  src="/favicon.ico"
+                  alt="Maharashtra Government Logo"
+                  style={{
+                    height: windowWidth < 768 ? "40px" : "80px",
+                    width: "auto",
+                    filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
+                    transition: "transform 0.3s ease"
+                  }}
+                />
+              </div>
+            </div>
 
-      {/* Language Selector - Right aligned (top on mobile) */}
-      <div className="order-3 order-md-3 mt-0 ms-auto ms-md-0" style={{ flex: '0 0 auto' }}>
-        <div className="position-relative" style={{
-          minWidth: windowWidth < 768 ? "100px" : "120px" // Increased for mobile
-        }}>
-          <select
-            className="form-select ps-3 pe-4 py-1"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            style={{
-              border: "2px solid rgba(255,255,255,0.3)",
-              color: "#0A2362",
-              fontWeight: "600",
-              cursor: "pointer",
-              borderRadius: "30px",
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              backdropFilter: "blur(4px)",
-              appearance: "none",
-              boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-              transition: "all 0.3s ease",
-              backgroundImage: `url(${language === "mr" ? "/india-flag.png" : "/uk-flag.png"}), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230A2362' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E")`,
-              backgroundRepeat: "no-repeat, no-repeat",
-              backgroundPosition: `
-                ${windowWidth < 768 ? "8px" : "10px"} center, // Adjusted for mobile
+            {/* Centered Title - Middle */}
+            <div className="order-2 order-md-2 text-center mx-2 mx-md-4" style={{
+              flex: '1 1 auto',
+              minWidth: 0, // Prevent overflow
+              overflow: 'visible', // Changed to visible to prevent text cutoff
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: 'auto',
+              minHeight: language === "mr" ? '50px' : 'auto',
+              padding: windowWidth < 768 ? '8px 0' : '10px 0' // Increased padding
+            }}>
+              <h2
+                className="fw-bold mb-0 text-white"
+                style={{
+                  fontSize: windowWidth < 420 ? (language === "mr" ? "1rem" : "1rem") : // Extra small screens
+                    windowWidth < 768 ? (language === "mr" ? "1.1rem" : "1.1rem") : // Small screens
+                      windowWidth < 992 ? "1.4rem" : "1.7rem", // Medium and large screens
+                  letterSpacing: "0.5px",
+                  position: "relative",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
+                  maxWidth: '100%',
+                  whiteSpace: 'nowrap',
+                  overflow: 'visible',
+                  textOverflow: 'ellipsis',
+                  lineHeight: language === "mr" ? '1.5' : '1.2',
+                  margin: 0,
+                  padding: language === "mr" ? '5px 5px' : '0 5px',
+                  height: '100%'
+                }}
+              >
+                {language === "mr" ? "अहिल्यानगर पोलीस" : "AHILYANAGAR POLICE"}
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: "-3px",
+                    left: 0,
+                    width: "100%",
+                    height: "2px",
+                    background: "linear-gradient(to right, #FFD700, #FFFFFF)",
+                    borderRadius: "3px",
+                    transform: "scaleX(0)",
+                    transformOrigin: "left center",
+                  }}
+                ></span>
+              </h2>
+            </div>
+
+            {/* Language Selector - Right aligned (top on mobile) */}
+            <div className="order-3 order-md-3 mt-0 ms-auto ms-md-0" style={{
+              flex: '0 0 auto',
+              width: windowWidth < 420 ? '100px' : (windowWidth < 768 ? '110px' : '120px'),
+              marginLeft: windowWidth < 768 ? 'auto' : '0',
+              marginRight: windowWidth < 420 ? '5px' : (windowWidth < 768 ? '10px' : '0')
+            }}>
+              <div className="position-relative" style={{
+                width: '100%'
+              }}>
+                <select
+                  className="form-select ps-3 pe-4 py-1"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  style={{
+                    border: "2px solid rgba(255,255,255,0.3)",
+                    color: "#0A2362",
+                    fontWeight: "600",
+                    cursor: "pointer",
+                    borderRadius: "30px",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    backdropFilter: "blur(4px)",
+                    appearance: "none",
+                    boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                    transition: "all 0.3s ease",
+                    backgroundImage: `url(${language === "mr" ? "/india-flag.png" : "/uk-flag.png"}), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230A2362' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: "no-repeat, no-repeat",
+                    backgroundPosition: `
+                ${windowWidth < 768 ? "8px" : "10px"} center,
                 calc(100% - ${windowWidth < 768 ? "10px" : "15px"}) center
               `,
-              backgroundSize: "16px, 16px",
-              paddingRight: windowWidth < 768 ? "30px" : "35px", // Adjusted for mobile
-              paddingLeft: windowWidth < 768 ? "30px" : "35px", // Adjusted for mobile
-              width: "100%", // Full width for consistency
-              fontSize: windowWidth < 768 ? "14px" : "16px" // Responsive font size
-            }}
-          >
-            <option value="mr">मराठी</option>
-            <option value="en">English</option>
-          </select>
+                    backgroundSize: "16px, 16px",
+                    paddingRight: windowWidth < 420 ? "25px" : (windowWidth < 768 ? "30px" : "35px"),
+                    paddingLeft: windowWidth < 420 ? "25px" : (windowWidth < 768 ? "30px" : "35px"),
+                    width: "100%",
+                    fontSize: windowWidth < 420 ? "12px" : (windowWidth < 768 ? "14px" : "16px")
+                  }}
+                >
+                  <option value="mr">मराठी</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Centered Title - Middle */}
-      <div className="order-2 order-md-2 text-center mx-2 mx-md-4" style={{
-        flex: '1 1 auto',
-        minWidth: 0, // Prevent overflow
-        overflow: 'hidden', // Ensure text doesn't overflow
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
-        padding: windowWidth < 768 ? '5px 0' : '10px 0' // Responsive padding
-      }}>
-        <h2
-          className="fw-bold mb-0 text-white"
-          style={{
-            fontSize: windowWidth < 768 ? "1.1rem" : // Smaller on mobile
-              windowWidth < 992 ? "1.4rem" : "1.7rem", // Adjusted breakpoints
-            letterSpacing: "0.5px",
-            position: "relative",
-            display: "inline-block",
-            textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
-            maxWidth: '100%',
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            lineHeight: '1.2',
-            margin: 0,
-            padding: '0 5px'
-          }}
-        >
-          {language === "mr" ? "अहिल्यानगर पोलीस" : "AHILYANAGAR POLICE"}
-          <span
-            style={{
-              position: "absolute",
-              bottom: "-3px",
-              left: 0,
-              width: "100%",
-              height: "2px",
-              background: "linear-gradient(to right, #FFD700, #FFFFFF)",
-              borderRadius: "3px",
-              transform: "scaleX(0)",
-              transformOrigin: "left center",
-              transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-            }}
-          ></span>
-        </h2>
-      </div>
-    </div>
-  </div>
-</header>
+      </header>
 
       {/* Main Content with Subtle Background Pattern */}
       <main
@@ -519,49 +527,49 @@ const FeedbackForm = () => {
         <div className="container">
           {/* Animated Slogans Carousel */}
           <div className="mb-2 mb-md-3">  {/* Reduced bottom margin */}
-<div className="slogan-carousel" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-  {t.slogans &&
-    t.slogans.map((s, idx) => (
-      <div
-        key={idx}
-        className="slogan-item"
-        style={{
-          animationDelay: `${idx * 0.2}s`,
-          background: "rgba(255,255,255,0.9)",
-          borderRadius: "6px",
-          boxShadow: "0 2px 8px rgba(10, 35, 98, 0.1)",
-          borderLeft: "3px solid #0A2362",
-          transition: "all 0.3s ease",
-          margin: "0 auto 16px",
-          padding: "clamp(12px, 2vw, 20px)",
-          width: "clamp(300px, 90vw, 800px)",
-          boxSizing: "border-box"
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "translateY(-2px)";
-          e.currentTarget.style.boxShadow = "0 4px 12px rgba(10, 35, 98, 0.15)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "";
-          e.currentTarget.style.boxShadow = "0 2px 8px rgba(10, 35, 98, 0.1)";
-        }}
-      >
-        <div
-          className="slogan-text"
-          style={{
-            color: "#0A2362",
-            fontSize: "clamp(14px, 1.8vw, 18px)",
-            lineHeight: "1.5",
-            textAlign: "left",
-            whiteSpace: "pre-wrap",
-            overflowWrap: "break-word"
-          }}
-          dangerouslySetInnerHTML={{ __html: s }}
-        />
-      </div>
-    ))}
-</div>
-</div>
+            <div className="slogan-carousel" style={{ maxWidth: "1200px", margin: "0 auto" }}>
+              {t.slogans &&
+                t.slogans.map((s, idx) => (
+                  <div
+                    key={idx}
+                    className="slogan-item"
+                    style={{
+                      animationDelay: `${idx * 0.2}s`,
+                      background: "rgba(255,255,255,0.9)",
+                      borderRadius: "6px",
+                      boxShadow: "0 2px 8px rgba(10, 35, 98, 0.1)",
+                      borderLeft: "3px solid #0A2362",
+                      transition: "all 0.3s ease",
+                      margin: "0 auto 16px",
+                      padding: "clamp(12px, 2vw, 20px)",
+                      width: "clamp(300px, 90vw, 800px)",
+                      boxSizing: "border-box"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow = "0 4px 12px rgba(10, 35, 98, 0.15)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "";
+                      e.currentTarget.style.boxShadow = "0 2px 8px rgba(10, 35, 98, 0.1)";
+                    }}
+                  >
+                    <div
+                      className="slogan-text"
+                      style={{
+                        color: "#0A2362",
+                        fontSize: "clamp(14px, 1.8vw, 18px)",
+                        lineHeight: "1.5",
+                        textAlign: "left",
+                        whiteSpace: "pre-wrap",
+                        overflowWrap: "break-word"
+                      }}
+                      dangerouslySetInnerHTML={{ __html: s }}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
 
           {/* Form Section with Floating Label Effect */}
           <div className="row justify-content-center">
@@ -623,7 +631,7 @@ const FeedbackForm = () => {
                             htmlFor="nameInput"
                             style={{ color: "#6c757d" }}
                           >
-                            {t.fullName} 
+                            {t.fullName}
                           </label>
                         </div>
                       </div>
@@ -649,50 +657,50 @@ const FeedbackForm = () => {
                             htmlFor="phoneInput"
                             style={{ color: "#6c757d" }}
                           >
-                            {t.phone} 
+                            {t.phone}
                           </label>
                         </div>
                       </div>
 
                       <div className="col-12">
                         <div className="form-floating">
-  <select
-    className="form-select"
-    name="policeStation"
-    id="policeStationSelect"
-    value={selectedPoliceStation}
-    onChange={handleChange}
-    required
-    style={{
-      borderLeft: "3px solid #0A2362",
-      borderRadius: "0 5px 5px 0",
-      paddingTop: "1.625rem",
-      paddingBottom: "0.625rem", // Added bottom padding
-      height: "calc(3.5rem + 2px)", // Explicit height
-    }}
-  >
-    <option value=""></option>
-    {policeStations.map((station, i) => (
-      <option key={i} value={station.en}>
-        {language === "mr" ? station.mr : station.en}
-      </option>
-    ))}
-  </select>
-  <label
-    htmlFor="policeStationSelect"
-    style={{
-      color: "#6c757d",
-      paddingTop: "0.5rem", // Added padding to label
-      paddingBottom: "0.5rem", // Added padding to label
-      height: "auto", // Allow label to expand
-    }}
-  >
-    {language === "mr"
-      ? "तुमचे पोलीस स्टेशन निवडा"
-      : "Select your police station"}
-    <span className="text-danger">*</span>
-  </label>
-</div>
+                          <select
+                            className="form-select"
+                            name="policeStation"
+                            id="policeStationSelect"
+                            value={selectedPoliceStation}
+                            onChange={handleChange}
+                            required
+                            style={{
+                              borderLeft: "3px solid #0A2362",
+                              borderRadius: "0 5px 5px 0",
+                              paddingTop: "1.625rem",
+                              paddingBottom: "0.625rem", // Added bottom padding
+                              height: "calc(3.5rem + 2px)", // Explicit height
+                            }}
+                          >
+                            <option value=""></option>
+                            {policeStations.map((station, i) => (
+                              <option key={i} value={station.en}>
+                                {language === "mr" ? station.mr : station.en}
+                              </option>
+                            ))}
+                          </select>
+                          <label
+                            htmlFor="policeStationSelect"
+                            style={{
+                              color: "#6c757d",
+                              paddingTop: "0.5rem", // Added padding to label
+                              paddingBottom: "0.5rem", // Added padding to label
+                              height: "auto", // Allow label to expand
+                            }}
+                          >
+                            {language === "mr"
+                              ? "तुमचे पोलीस स्टेशन निवडा"
+                              : "Select your police station"}
+                            <span className="text-danger">*</span>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -793,89 +801,89 @@ const FeedbackForm = () => {
                   </div>
 
                   {/* Department Ratings - Enhanced Table */}
- <div className="mb-3 mb-md-4">
-  <h5 className="fw-bold mb-2 mb-md-3" style={{ color: "#0A2362", fontSize: windowWidth < 768 ? "1rem" : "1.25rem" }}>
-    <i className="fas fa-list-alt me-1 me-md-2"></i>
-    {t.departmentRatingsHeading}
-  </h5>
+                  <div className="mb-3 mb-md-4">
+                    <h5 className="fw-bold mb-2 mb-md-3" style={{ color: "#0A2362", fontSize: windowWidth < 768 ? "1rem" : "1.25rem" }}>
+                      <i className="fas fa-list-alt me-1 me-md-2"></i>
+                      {t.departmentRatingsHeading}
+                    </h5>
 
-  <div className="table-responsive">
-    <table className="table table-hover mb-0" style={{ fontSize: windowWidth < 768 ? "0.75rem" : "0.9rem" }}>
-      <thead>
-        <tr style={{ background: "#0A2362", color: "white" }}>
-          <th style={{ width: "5%", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>#</th>
-          <th style={{ minWidth: windowWidth < 768 ? "80px" : "120px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-            {t.tableHeaders.department}
-          </th>
-          <th style={{ minWidth: windowWidth < 768 ? "80px" : "150px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-            {t.tableHeaders.rating}
-          </th>
-          <th style={{ minWidth: windowWidth < 768 ? "40px" : "80px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-            {t.tableHeaders.value}
-          </th>
-          <th style={{ width: windowWidth < 768 ? "30px" : "50px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }} className="text-center">
-            {t.tableHeaders.select}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {deptRatings.map((dept, idx) => (
-          <tr key={idx} style={{ verticalAlign: "middle" }}>
-            <td className="fw-bold" style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>{idx + 1}</td>
-            <td className="fw-bold" style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-              {dept.department}
-            </td>
-            <td style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-              <div className="d-flex align-items-center">
-                <input
-                  type="range"
-                  min="1"
-                  max="10"
-                  value={dept.rating}
-                  onChange={(e) => handleDeptSlider(idx, e.target.value)}
-                  className="form-range me-1 me-md-2"
-                  style={{
-                    height: windowWidth < 768 ? "3px" : "5px",
-                    cursor: "pointer",
-                    minWidth: windowWidth < 768 ? "60px" : "100px"
-                  }}
-                />
-              </div>
-            </td>
-            <td style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-              <span
-                className="badge rounded-pill px-1 py-0"
-                style={{
-                  background: "#0A2362",
-                  whiteSpace: "nowrap"
-                }}
-              >
-                {dept.rating}/10
-              </span>
-            </td>
-            <td className="text-center" style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
-              <div className="form-check form-switch d-flex justify-content-center m-0">
-                <input
-                  className="form-check-input m-0"
-                  type="checkbox"
-                  role="switch"
-                  checked={dept.checked}
-                  onChange={(e) => handleDeptCheck(idx, e.target.checked)}
-                  style={{
-                    width: windowWidth < 768 ? "1.8em" : "2.5em",
-                    height: windowWidth < 768 ? "1em" : "1.3em",
-                    cursor: "pointer",
-                    backgroundColor: dept.checked ? "#0A2362" : ""
-                  }}
-                />
-              </div>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-</div>
+                    <div className="table-responsive">
+                      <table className="table table-hover mb-0" style={{ fontSize: windowWidth < 768 ? "0.75rem" : "0.9rem" }}>
+                        <thead>
+                          <tr style={{ background: "#0A2362", color: "white" }}>
+                            <th style={{ width: "5%", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>#</th>
+                            <th style={{ minWidth: windowWidth < 768 ? "80px" : "120px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                              {t.tableHeaders.department}
+                            </th>
+                            <th style={{ minWidth: windowWidth < 768 ? "80px" : "150px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                              {t.tableHeaders.rating}
+                            </th>
+                            <th style={{ minWidth: windowWidth < 768 ? "40px" : "80px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                              {t.tableHeaders.value}
+                            </th>
+                            <th style={{ width: windowWidth < 768 ? "30px" : "50px", padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }} className="text-center">
+                              {t.tableHeaders.select}
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {deptRatings.map((dept, idx) => (
+                            <tr key={idx} style={{ verticalAlign: "middle" }}>
+                              <td className="fw-bold" style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>{idx + 1}</td>
+                              <td className="fw-bold" style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                                {dept.department}
+                              </td>
+                              <td style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                                <div className="d-flex align-items-center">
+                                  <input
+                                    type="range"
+                                    min="1"
+                                    max="10"
+                                    value={dept.rating}
+                                    onChange={(e) => handleDeptSlider(idx, e.target.value)}
+                                    className="form-range me-1 me-md-2"
+                                    style={{
+                                      height: windowWidth < 768 ? "3px" : "5px",
+                                      cursor: "pointer",
+                                      minWidth: windowWidth < 768 ? "60px" : "100px"
+                                    }}
+                                  />
+                                </div>
+                              </td>
+                              <td style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                                <span
+                                  className="badge rounded-pill px-1 py-0"
+                                  style={{
+                                    background: "#0A2362",
+                                    whiteSpace: "nowrap"
+                                  }}
+                                >
+                                  {dept.rating}/10
+                                </span>
+                              </td>
+                              <td className="text-center" style={{ padding: windowWidth < 768 ? "0.3rem" : "0.5rem" }}>
+                                <div className="form-check form-switch d-flex justify-content-center m-0">
+                                  <input
+                                    className="form-check-input m-0"
+                                    type="checkbox"
+                                    role="switch"
+                                    checked={dept.checked}
+                                    onChange={(e) => handleDeptCheck(idx, e.target.checked)}
+                                    style={{
+                                      width: windowWidth < 768 ? "1.8em" : "2.5em",
+                                      height: windowWidth < 768 ? "1em" : "1.3em",
+                                      cursor: "pointer",
+                                      backgroundColor: dept.checked ? "#0A2362" : ""
+                                    }}
+                                  />
+                                </div>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                   {/* Submit Button with Animation */}
                   <div className="text-center mt-3 mt-md-4">
                     <button
