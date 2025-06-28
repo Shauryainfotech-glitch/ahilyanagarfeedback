@@ -67,7 +67,7 @@ const translations = {
     success: "अभिप्राय यशस्वीरित्या पाठवला गेला",
     error:
       "तुमचा अभिप्राय पाठवण्यात काही अडचण आली आहे. कृपया नंतर पुन्हा प्रयत्न करा.",
-    descriptionNote: "आपली अभिप्राय व्यक्त करा (कमाल ५० शब्दांची मर्यादा )",
+    descriptionNote: "आपला अभिप्राय व्यक्त करा (कमाल ५० शब्दांची मर्यादा )",
     departmentList: [
       "वाहतूक",
       "महिला सुरक्षा",
@@ -96,7 +96,7 @@ const translations = {
 
 const policeStations = [
   { en: "Akole", mr: "अकोले" },
-  { en: "Ashwi", mr: "अश्वी" },
+  { en: "Ashwi", mr: "आश्वी" },
   { en: "Belavandi", mr: "बेलवंडी" },
   { en: "Bhingar Camp", mr: "भिंगार कॅम्प" },
   { en: "Ghargaon", mr: "घारगाव" },
