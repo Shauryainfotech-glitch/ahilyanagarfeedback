@@ -83,7 +83,7 @@ const translations = {
     descriptionRequired: "कृपया अभिप्राय नोंदवा.",
     slogans: [
       "आम्हाला जाणीव आहे<br><span style='padding-left: clamp(30px, 8vw, 150px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"सुधारणा ही निरंतर प्रक्रिया आहे.\"</span>",
-      "जनतेला सेवा देण्यासाठी आम्ही कटिबद्ध आहोत<br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"तुम्हाला काही सूचवायचं आहे का ?\"</span>"
+      "जनतेला सेवा देण्यासाठी आम्ही कटिबद्ध आहोत<br><span style='padding-left: clamp(60px, 15vw, 330px); display: inline-block; font-weight: bold; font-style: italic; font-size:1.1em'>\"तुम्हाला काही सुचवायचं आहे का ?\"</span>"
     ],
     tableHeaders: {
       department: "विभाग",
