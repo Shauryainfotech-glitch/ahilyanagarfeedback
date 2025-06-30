@@ -6,7 +6,7 @@ const Feedback = sequelize.define('Feedback', {
   name: { type: DataTypes.STRING, allowNull: false },
   phone: { type: DataTypes.STRING, allowNull: false },
   policeStation: { type: DataTypes.STRING, allowNull: false },
-  description: { type: DataTypes.STRING, allowNull: false, maxlength: 300 },
+  description: { type: DataTypes.STRING, allowNull: false},
   overallRating: { type: DataTypes.INTEGER, allowNull: false },
   departmentRatings: { type: DataTypes.JSONB },
 }, {});
