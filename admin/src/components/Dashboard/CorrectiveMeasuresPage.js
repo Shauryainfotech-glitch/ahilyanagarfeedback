@@ -119,7 +119,7 @@ const CorrectiveMeasuresPage = () => {
         throw new Error('Authentication token not found. Please log in.');
       }
 
-      const response = await fetch(`${API_URL}/feedback`, {
+      const response = await fetch(`${API_URL}/api/feedback`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

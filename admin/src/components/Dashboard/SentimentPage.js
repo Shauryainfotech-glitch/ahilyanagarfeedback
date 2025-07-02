@@ -133,7 +133,7 @@ const SentimentPage = () => {
         const token = localStorage.getItem('adminToken');
         
         // Add token to request headers for authentication
-        const response = await axios.get(`${API_URL}/feedback`, {
+        const response = await axios.get(`${API_URL}/api/feedback`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
