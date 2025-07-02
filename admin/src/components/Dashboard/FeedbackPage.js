@@ -139,6 +139,7 @@ const FeedbackPage = () => {
     const headers = [
       t('name'),
       t('phone'),
+      t('policeStation', 'Police Station'),
       t('description'),
       t('overallRating'),
       t('departmentRatings'),
@@ -172,6 +173,7 @@ const FeedbackPage = () => {
       const row = [
         (feedback.name || '').replace(/,/g, ' '), // Remove commas from strings
         (feedback.phone || '').replace(/,/g, ' '),
+        (feedback.policeStation || '').replace(/,/g, ' '),
         (feedback.comments || feedback.description || feedback.message || '').replace(/,/g, ' ').replace(/\n/g, ' '),
         feedback.overallRating || '',
         departmentRatingsStr,

@@ -274,27 +274,7 @@ const SentimentPage = () => {
     setLoading(false);
   };
 
-  // Custom pie chart rendering function
-  const renderActiveShape = (props) => {
-    const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
 
-    return (
-      <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-          {`${payload.name}: ${(percent * 100).toFixed(0)}%`}
-        </text>
-        <Sector
-          cx={cx}
-          cy={cy}
-          innerRadius={innerRadius}
-          outerRadius={outerRadius}
-          startAngle={startAngle}
-          endAngle={endAngle}
-          fill={fill}
-        />
-      </g>
-    );
-  };
 
   const renderSentimentDistribution = () => {
     // No sentiment data yet
@@ -321,8 +301,8 @@ const SentimentPage = () => {
                 data={data}
                 cx="50%"
                 cy="50%"
-                labelLine={isMobile ? false : true}
-                label={!isMobile}
+                labelLine={false}
+                label={false}
                 outerRadius={isMobile ? 70 : 90}
                 fill="#8884d8"
                 dataKey="value"
@@ -331,13 +311,7 @@ const SentimentPage = () => {
                   <Cell key={`cell-${index}`} fill={entry.color} />
                 ))}
               </Pie>
-              <Legend 
-                verticalAlign={isMobile ? "middle" : "bottom"}
-                align={isMobile ? "right" : "center"}
-                layout={isMobile ? "vertical" : "horizontal"}
-                iconSize={isMobile ? 8 : 10}
-                wrapperStyle={isMobile ? { right: 10 } : null}
-              />
+
               <Tooltip formatter={(value) => `${value}%`} />
             </PieChart>
           </ResponsiveContainer>
