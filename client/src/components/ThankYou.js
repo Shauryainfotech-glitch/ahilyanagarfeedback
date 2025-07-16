@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "../../src/App.css";
 
-const translations = {
+const ThankYou = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [language, setLanguage] = useState("mr"); // Added missing state
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Translation object
+  const translations = {
     mr: {
       title: "अहिल्यानगर पोलीस",
       thankYou: "धन्यवाद!",
@@ -48,22 +62,10 @@ const translations = {
     },
   };
 
-const FeedbackForm = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [language, setLanguage] = useState("mr"); // Added missing state
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
- const t = translations[language];
+  const t = translations[language]; // Current translation
 
   return (
-       <div className="container-fluid px-0">
+    <div className="container-fluid px-0">
       {/* Enhanced Header with Gradient and Subtle Animation */}
       <header
         className="sticky-top"
@@ -639,4 +641,4 @@ const FeedbackForm = () => {
   );
 };
 
-export default FeedbackForm;
+export default ThankYou;
